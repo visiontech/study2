@@ -7,24 +7,28 @@ public class Homework1 {
 
 	private static void getSum(Double sum) {
 		 
-	int id = (int)(sum/100);
+	String id = String.valueOf(sum/100).substring(0,1);
 	
 	switch(id){
-	case 0: discount=0;
+	case "0": discount=0;
 	break;
-	case 1: discount=0;
+	case "1": discount=0;
 	break;
-	case 2: discount=0;
+	case "2": discount=0;
 	break;
-	case 3: discount=3;
+	case "3": discount=3;
 	break;
-	case 4: discount=3;
+	case "4": discount=3;
 	break;
-	case 5: discount=5;
+	case "5": discount=5;
 	break;
-	case 6: discount=5;
+	case "6": discount=5;
 	break;
-	case 7: discount=5;
+	case "7": discount=5;
+	break;
+	case "-": discount=0; 
+	sum=0.00; 
+	System.out.println("ОШИБКА!!! Сумма оплаты меньше нуля");
 	break;
 	default:discount=10;
 	break;
@@ -43,13 +47,13 @@ public class Homework1 {
 			discount=5;
 		}else discount = 10;
 		double result = sum * (1-discount/100);
-		System.out.println("Итого к оплате: "+ result + " Ваша скидка:" +discount+"%");
+		System.out.println("Итого к оплате: "+ result + " Ваша скидка: " +discount+"%");
 	}	
 	
 	public static void main(String[] args) {
 	
-		getSumIf(799.00);
-		getSum(799.00);
+		//getSumIf(799.00);
+		getSum(-800.00);
 	}	
 	
 }
