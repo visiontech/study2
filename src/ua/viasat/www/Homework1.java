@@ -1,28 +1,55 @@
 package ua.viasat.www;
 
 public class Homework1 {
+ public static	double sum = 100;
+ public static	double discount = 0;
+ 
 
-	/**
-	 * @param args
-	 */
+	private static void getSum(Double sum) {
+		 
+	int id = (int)(sum/100);
 	
-	//Text by me. Hey hey hey!  //yesyesyeyeyeyyeyeye
+	switch(id){
+	case 0: discount=0;
+	break;
+	case 1: discount=0;
+	break;
+	case 2: discount=0;
+	break;
+	case 3: discount=3;
+	break;
+	case 4: discount=3;
+	break;
+	case 5: discount=5;
+	break;
+	case 6: discount=5;
+	break;
+	case 7: discount=5;
+	break;
+	default:discount=10;
+	break;
+	}
+	
+		System.out.println("Итого к оплате: "+sum*(1-discount/100)+" Ваша скидка: "+discount+"%");
+}	
+		
+	private static void getSumIf(Double sum) {
+				
+		if(sum<300) {		
+			discount = 0;
+		}else if(sum<500){
+			discount = 3;
+		}else if(sum<800) {
+			discount=5;
+		}else discount = 10;
+		double result = sum * (1-discount/100);
+		System.out.println("Итого к оплате: "+ result + " Ваша скидка:" +discount+"%");
+	}	
+	
 	public static void main(String[] args) {
-
-		double sum = 100;
-		int discount = 0;
-	if(sum<300) {		
-		discount = 0;
-	}else if(sum<500){
-		discount = 3;
-	}else if(sum<800) {
-		discount=5;
-	}else discount = 10;
 	
-	double result = sum * (1-discount/100);
-	
-	System.out.println("Всего к оплате: "+ result + " Ваша скидка:" +discount+"%" );
-	
+		getSumIf(799.00);
+		getSum(799.00);
 	}	
 	
 }
