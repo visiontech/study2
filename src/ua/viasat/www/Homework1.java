@@ -6,7 +6,7 @@ public class Homework1 {
 	 * @param args
 	 */
 	
-	//Text by me. Hey hey hey!
+	//Text by me. Hey hey hey!  //yesyesyeyeyeyyeyeye
 	public static void main(String[] args) {
 
 		double sum = 100;
