@@ -8,14 +8,14 @@ public class Homework1 {
 
 		String id = String.valueOf((int) (sum / 100));
 
-		int mod = (int) (Math.abs((sum / 100)) / (sum / 100)); //Расчет знака суммы
+		int mod = (int) (Math.abs((sum / 100)) / (sum / 100)); // sign calculation
 		
 
 		switch (mod) {
 		case -1:
 			discount = 0;
 			sum = 0.00;
-			System.out.println("ОШИБКА!!! Сумма должна быть >=0");
+			System.out.println("ERROR!!! The sum must be  >=0");
 		break;
 		default:
 			switch (id) {
@@ -69,7 +69,7 @@ public class Homework1 {
 
 	public static void main(String[] args) {
 
-		// getSumIf(799.00);
+		//getSumIf(799.00);
 		getSum(-4000.00);
 	}
 
