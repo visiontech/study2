@@ -94,7 +94,7 @@ public class Homework2 {
 			
 			System.out.println("Введите число:>");
 			Scanner reader = new Scanner(System.in);
-			if (reader.hasNext("\\d*")) {
+			if (reader.hasNext("-?\\d*")) {
 				flg = false;
 				int n = reader.nextInt();
 				if(n%2==0){
