@@ -81,13 +81,36 @@ public class Homework2 {
 		}
 		System.out.println(Arrays.toString(a));
 	}
-
+	
+	
 	public static void task5() {
-		// 5. вводится латинская буква - гласная она или согласная
+		// 5. с клавиатуры вводится число, вывести - четное оно или не четное
 		boolean flg = true;
 		while (flg) {
 			
-			System.out.println("Enter the Latin letter:>");
+			System.out.println("Введите число:>");
+			Scanner reader = new Scanner(System.in);
+			if (reader.hasNext("\\d")) {
+				flg = false;
+				int n = reader.nextInt();
+				if(n%2==0){
+					System.out.println(n+" - Четное число");
+				} else {
+					System.out.println(n+" - Нечетное число");
+				}
+						reader.close();
+			} else {
+				System.out.println("Некорректный ввод! Переменная должна быть числом!!");
+			}
+		}
+	}
+
+	public static void task6() {
+		// 6. вводится латинская буква - гласная она или согласная
+		boolean flg = true;
+		while (flg) {
+			
+			System.out.println("Введите латинскую букву:>");
 			Scanner reader = new Scanner(System.in);
 			if (reader.hasNext("\\D")) {
 				flg = false;
@@ -100,31 +123,26 @@ public class Homework2 {
 				}
 						reader.close();
 			} else {
-				System.out
-						.println("Incorrect enter!!! You can not enter number and null!!");
+				System.out.println("Некорректный ввод! Переменная должна быть латинской буквой!!");
 			}
 		}
 	}
 
 	public static void main(String[] args) {
-		System.out
-				.println("__________________________ЗАДАНИЕ 1 (ВАРИАНТ 1)_________________________");
+		System.out.println("__________________________ЗАДАНИЕ 1 (ВАРИАНТ 1)_________________________");
 		task1_1();
-		System.out
-				.println("__________________________ЗАДАНИЕ 1 (ВАРИАНТ 2)__________________________");
+		System.out.println("__________________________ЗАДАНИЕ 1 (ВАРИАНТ 2)__________________________");
 		task1_2();
-		System.out
-				.println("__________________________ЗАДАНИЕ 2_____________________________");
+		System.out.println("__________________________ЗАДАНИЕ 2_____________________________");
 		task2(2014);
-		System.out
-				.println("__________________________ЗАДАНИЕ 3_____________________________");
+		System.out.println("__________________________ЗАДАНИЕ 3_____________________________");
 		task3_1(21);
-		System.out
-				.println("__________________________ЗАДАНИЕ 4_____________________________");
+		System.out.println("__________________________ЗАДАНИЕ 4_____________________________");
 		task4();
-		System.out
-				.println("__________________________ЗАДАНИЕ 5_____________________________");
+		System.out.println("__________________________ЗАДАНИЕ 5_____________________________");
 		task5();
+		System.out.println("__________________________ЗАДАНИЕ 6_____________________________");
+		task6();
 	}
 
 }
