@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class Homework2 {
 
-	public static void task1_1() { // 1.отсортировать массив пузырьковым методом
-		// вариант 1
+	public static void task1_1() { // 1.РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°С‚СЊ РјР°СЃСЃРёРІ РїСѓР·С‹СЂСЊРєРѕРІС‹Рј РјРµС‚РѕРґРѕРј
+		//РІР°СЂРёР°РЅС‚1
 		int temp;
 		int a[] = { 9, 5, 7, 6, 0, 3, 1, 2, 4, 8 };
 		for (int k = 0; k < a.length - 1; k++) {
@@ -21,8 +21,8 @@ public class Homework2 {
 		System.out.println(Arrays.toString(a));
 	}
 
-	public static void task1_2() { // 1.отсортировать массив пузырьковым методом
-		// вариант 2
+	public static void task1_2() { // 1.РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°С‚СЊ РјР°СЃСЃРёРІ РїСѓР·С‹СЂСЊРєРѕРІС‹Рј РјРµС‚РѕРґРѕРј
+		// РІР°СЂРёР°РЅС‚2
 		int temp;
 		int a[] = { 9, 5, 7, 6, 0, 3, 1, 2, 4, 8 };
 		Arrays.sort(a);
@@ -31,9 +31,8 @@ public class Homework2 {
 
 	public static void task2(int year) {
 		/*
-		 * 2. Создать массив из 12 элементов, каждый элемент является
-		 * колличеством дней месяца. Заполнить масив в цикле минимальным
-		 * количеством строк.
+		 * РЎРѕР·РґР°С‚СЊ РјР°СЃСЃРёРІ РёР· 12 СЌР»РµРјРµРЅС‚РѕРІ, РєР°Р¶РґС‹Р№ СЌР»РµРјРµРЅС‚ СЏРІР»СЏРµС‚СЃСЏ РєРѕР»Р»РёС‡РµСЃС‚РІРѕРј
+		 * РґРЅРµР№ РјРµСЃСЏС†Р°. Р—Р°РїРѕР»РЅРёС‚СЊ РјР°СЃРёРІ РІ С†РёРєР»Рµ РјРёРЅРёРјР°Р»СЊРЅС‹Рј РєРѕР»РёС‡РµСЃС‚РІРѕРј СЃС‚СЂРѕРє.
 		 */
 
 		int a[] = new int[12];
@@ -49,7 +48,7 @@ public class Homework2 {
 
 	public static void task3_1(int n) {
 		/*
-		 * 3. В цикле вывести 21 число фибоначчи вариант1
+		 * 3.Р’ С†РёРєР»Рµ РІС‹РІРµСЃС‚Рё 21 С‡РёСЃР»Рѕ С„РёР±РѕРЅР°С‡Рё
 		 */
 		int feb[] = new int[3];
 		feb[0] = 0;
@@ -64,7 +63,7 @@ public class Homework2 {
 		}
 	}
 
-	private static int[] swapper(int m[], int a, int b) {// метод перемещения  а и в
+	private static int[] swapper(int m[], int a, int b) {// Р—РђРњР•РќРђ Р•Р›Р•РњР•РќРўРћР’
 		int temp;
 		temp = m[a];
 		m[a] = m[b];
@@ -73,7 +72,7 @@ public class Homework2 {
 	}
 
 	public static void task4() {
-		// 4. Сделать реверс масива
+		// 4. РЎРґРµР»Р°С‚СЊ СЂРµРІРµСЂСЃ РјР°СЃРёРІР° 
 		int temp;
 		int a[] = { 9, 5, 7, 6, 0, 3, 1, 2, 4, 8, 0 };
 		for (int i = 0; i < a.length / 2; i++) {
@@ -84,27 +83,34 @@ public class Homework2 {
 	}
 	
 	public static void task5() {
-		// 4. вводится латинская буква - гласная она или согласная
-		System.out.println("Enter the Latin letter:>");
-		Scanner reader = new Scanner(System.in);
-		if(reader.hasNext("\\D")&&reader.next("\\D").length()==1){
-			String n = reader.next("\\D");
-		} else System.out.println("Incorrect enter!!! You can not enter number and null!!");
-		 
+		// 4. СЃ РєР»Р°РІРёР°С‚СѓСЂС‹ РІРІРѕРґРёС‚СЃСЏ С‡РёСЃР»Рѕ, РІС‹РІРµСЃС‚Рё - С‡РµС‚РЅРѕРµ РѕРЅРѕ РёР»Рё РЅРµ С‡РµС‚РЅРѕРµ
+		boolean flg = true;
+		while (flg) {
+			System.out.println("Enter the Latin letter:>");
+			Scanner reader = new Scanner(System.in);
+			if (reader.hasNext("\\D") && reader.next("\\D").length() == 1) {
+
+				String n = reader.next("\\D");
+				flg = false;
+			} else {
+				System.out
+						.println("Incorrect enter!!! You can not enter number and null!!");
+			}
+		}
 	}
 
 	public static void main(String[] args) {
-		System.out.println("__________________________ЗАДАНИЕ 1 (Вариант 1)_________________________");
+		System.out.println("__________________________Р—РђР”РђРќРР• 1 (Р’РђР РРђРќРў 1)_________________________");
 		task1_1();
-		System.out.println("__________________________ЗАДАНИЕ 1 (Вариант 2)__________________________");
+		System.out.println("__________________________Р—РђР”РђРќРР• 1 (Р’РђР РРђРќРў 2)__________________________");
 		task1_2();
-		System.out.println("__________________________ЗАДАНИЕ 2_____________________________");
+		System.out.println("__________________________Р—РђР”РђРќРР• 2_____________________________");
 		task2(2014);
-		System.out.println("__________________________ЗАДАНИЕ 3_____________________________");
+		System.out.println("__________________________Р—РђР”РђРќРР• 3_____________________________");
 		task3_1(21);
-		System.out.println("__________________________ЗАДАНИЕ 4_____________________________");
+		System.out.println("__________________________Р—РђР”РђРќРР• 4_____________________________");
 		task4();
-		System.out.println("__________________________ЗАДАНИЕ 5_____________________________");
+		System.out.println("__________________________Р—РђР”РђРќРР• 5_____________________________");
 		task5();
 	}
 
