@@ -72,5 +72,4 @@ public class Homework1 {
 		//getSumIf(799.00);
 		getSum(-4000.00);
 	}
-
 }
