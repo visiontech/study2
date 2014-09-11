@@ -22,7 +22,7 @@ public class Homework2 {
 		System.out.println("OUTPUT: "+Arrays.toString(a)+"\n");
 	}
 
-	public static void task1_2() { // 1.отсортировать массив пузырьковым методом
+	public static void task1_2() { // 1.отсортировать массив метод класса Arrays
 		// вариант2
 		int temp;
 		int a[] = { 9, 5, 7, 6, 0, 3, 1, 2, 4, 8 };
@@ -35,7 +35,7 @@ public class Homework2 {
 		 * Создать массив из 12 элементов, каждый элемент является колличеством
 		 * дней месяца. Заполнить масив в цикле минимальным количеством строк.
 		 */
-
+		System.out.println("Year: "+year+"\n");
 		int a[] = new int[12];
 		int k = 0;
 		for (int i = 0; i < a.length; i++) {
@@ -49,8 +49,9 @@ public class Homework2 {
 
 	public static void task3_1(int n) {
 		/*
-		 * 3.В цикле вывести 21 число фибоначи
+		 * 3.В цикле вывести 21 число фибоначчи
 		 */
+		System.out.println("Кол-во чисел: "+n+"\n");
 		int feb[] = new int[3];
 		feb[0] = 0;
 		feb[1] = 1;
@@ -64,7 +65,7 @@ public class Homework2 {
 		}
 	}
 
-	private static int[] swapper(int m[], int a, int b) {// ЗАМЕНА ЕЛЕМЕНТОВ
+	private static  int[] swapper(int m[], int a, int b) {// ЗАМЕНА ЕЛЕМЕНТОВ
 		int temp;
 		temp = m[a];
 		m[a] = m[b];
@@ -74,8 +75,10 @@ public class Homework2 {
 
 	public static void task4() {
 		// 4. Сделать реверс масива
+		
 		int temp;
 		int a[] = { 9, 5, 7, 6, 0, 3, 1, 2, 4, 8, 0 };
+		System.out.println("INPUT: "+Arrays.toString(a)+"\n");
 		for (int i = 0; i < a.length / 2; i++) {
 			a = swapper(a, i, a.length - 1 - i);
 
