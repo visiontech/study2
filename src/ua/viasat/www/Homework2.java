@@ -94,7 +94,7 @@ public class Homework2 {
 			
 			System.out.println("Введите число:>");
 			Scanner reader = new Scanner(System.in);
-			if (reader.hasNext("\\d")) {
+			if (reader.hasNext("\\d*")) {
 				flg = false;
 				int n = reader.nextInt();
 				if(n%2==0){
@@ -117,7 +117,7 @@ public class Homework2 {
 			System.out.println("Введите латинскую букву:>");
 			Scanner reader = new Scanner(System.in);
 
-			if (reader.hasNext("\\D")) {
+			if (reader.hasNext("[a-z]")) {
 				flg = false;
 				String pattern = "/[aeiou]/i ";
 				String n = reader.next();
@@ -130,7 +130,7 @@ public class Homework2 {
 				
 
 			} else {
-				System.out.println("Некорректный ввод! Переменная должна быть латинской буквой!!");
+				System.out.println("Некорректный ввод! Переменная должна быть единственной латинской буквой!!");
 				
 			} 
 			
