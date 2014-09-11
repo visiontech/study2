@@ -83,7 +83,7 @@ public class Homework2 {
 	}
 
 	public static void task5() {
-		// 4. с клавиатуры вводится число, вывести - четное оно или не четное
+		// 5. вводится латинская буква - гласная она или согласная
 		boolean flg = true;
 		while (flg) {
 			
@@ -98,12 +98,7 @@ public class Homework2 {
 				} else {
 					System.out.println(n+" - Согласная буква");
 				}
-				
-				
-				
-				
-				
-				reader.close();
+						reader.close();
 			} else {
 				System.out
 						.println("Incorrect enter!!! You can not enter number and null!!");
