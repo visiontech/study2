@@ -9,8 +9,9 @@ public class Homework2 {
 		// вариант1
 		int temp;
 		int a[] = { 9, 5, 7, 6, 0, 3, 1, 2, 4, 8 };
+		System.out.println("INPUT: "+Arrays.toString(a)+"\n");
 		for (int k = 0; k < a.length - 1; k++) {
-			for (int i = 0; i < a.length - 1; i++) {
+			for (int i = 0; i < a.length - 1 - k; i++) {
 				if (a[i + 1] < a[i]) {
 					temp = a[i];
 					a[i] = a[i + 1];
@@ -18,7 +19,7 @@ public class Homework2 {
 				}
 			}
 		}
-		System.out.println(Arrays.toString(a));
+		System.out.println("OUTPUT: "+Arrays.toString(a)+"\n");
 	}
 
 	public static void task1_2() { // 1.отсортировать массив пузырьковым методом
@@ -26,7 +27,7 @@ public class Homework2 {
 		int temp;
 		int a[] = { 9, 5, 7, 6, 0, 3, 1, 2, 4, 8 };
 		Arrays.sort(a);
-		System.out.println(Arrays.toString(a));
+		System.out.println(Arrays.toString(a)+"\n");
 	}
 
 	public static void task2(int year) {
@@ -43,7 +44,7 @@ public class Homework2 {
 			a[1] = year % 4 == 0 ? 29 : 28;
 		}
 
-		System.out.println(Arrays.toString(a));
+		System.out.println(Arrays.toString(a)+"\n");
 	}
 
 	public static void task3_1(int n) {
@@ -79,7 +80,7 @@ public class Homework2 {
 			a = swapper(a, i, a.length - 1 - i);
 
 		}
-		System.out.println(Arrays.toString(a));
+		System.out.println(Arrays.toString(a)+"\n");
 	}
 	
 	
@@ -98,51 +99,55 @@ public class Homework2 {
 				} else {
 					System.out.println(n+" - Нечетное число");
 				}
-						reader.close();
+						
 			} else {
 				System.out.println("Некорректный ввод! Переменная должна быть числом!!");
-			}
-		}
+			} 
+			} 
 	}
 
 	public static void task6() {
 		// 6. вводится латинская буква - гласная она или согласная
 		boolean flg = true;
 		while (flg) {
-			
+
 			System.out.println("Введите латинскую букву:>");
 			Scanner reader = new Scanner(System.in);
+
 			if (reader.hasNext("\\D")) {
 				flg = false;
 				String pattern = "/[aeiou]/i ";
 				String n = reader.next();
-				if(n.matches(pattern)){
-					System.out.println(n+" - Гласная буква");
+				reader.close();
+				if (n.matches(pattern)) {
+					System.out.println(n + " - Гласная буква");
 				} else {
-					System.out.println(n+" - Согласная буква");
+					System.out.println(n + " - Согласная буква");
 				}
-						reader.close();
+				
+
 			} else {
 				System.out.println("Некорректный ввод! Переменная должна быть латинской буквой!!");
-			}
+				
+			} 
+			
 		}
 	}
 
 	public static void main(String[] args) {
-		System.out.println("__________________________ЗАДАНИЕ 1 (ВАРИАНТ 1)_________________________");
+		System.out.println("__________________________ЗАДАНИЕ 1 (ВАРИАНТ 1)_________________________"+"\n");
 		task1_1();
-		System.out.println("__________________________ЗАДАНИЕ 1 (ВАРИАНТ 2)__________________________");
+		System.out.println("__________________________ЗАДАНИЕ 1 (ВАРИАНТ 2)__________________________"+"\n");
 		task1_2();
-		System.out.println("__________________________ЗАДАНИЕ 2_____________________________");
+		System.out.println("__________________________ЗАДАНИЕ 2_____________________________"+"\n");
 		task2(2014);
-		System.out.println("__________________________ЗАДАНИЕ 3_____________________________");
+		System.out.println("__________________________ЗАДАНИЕ 3_____________________________"+"\n");
 		task3_1(21);
-		System.out.println("__________________________ЗАДАНИЕ 4_____________________________");
+		System.out.println("__________________________ЗАДАНИЕ 4_____________________________"+"\n");
 		task4();
-		System.out.println("__________________________ЗАДАНИЕ 5_____________________________");
+		System.out.println("__________________________ЗАДАНИЕ 5_____________________________"+"\n");
 		task5();
-		System.out.println("__________________________ЗАДАНИЕ 6_____________________________");
+		System.out.println("__________________________ЗАДАНИЕ 6_____________________________"+"\n");
 		task6();
 	}
-
 }
