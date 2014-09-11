@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Homework2 {
 
 	public static void task1_1() { // 1.отсортировать массив пузырьковым методом
-		//вариант1
+		// вариант1
 		int temp;
 		int a[] = { 9, 5, 7, 6, 0, 3, 1, 2, 4, 8 };
 		for (int k = 0; k < a.length - 1; k++) {
@@ -72,7 +72,7 @@ public class Homework2 {
 	}
 
 	public static void task4() {
-		// 4. Сделать реверс масива 
+		// 4. Сделать реверс масива
 		int temp;
 		int a[] = { 9, 5, 7, 6, 0, 3, 1, 2, 4, 8, 0 };
 		for (int i = 0; i < a.length / 2; i++) {
@@ -81,17 +81,29 @@ public class Homework2 {
 		}
 		System.out.println(Arrays.toString(a));
 	}
-	
+
 	public static void task5() {
 		// 4. с клавиатуры вводится число, вывести - четное оно или не четное
 		boolean flg = true;
 		while (flg) {
+			
 			System.out.println("Enter the Latin letter:>");
 			Scanner reader = new Scanner(System.in);
-			if (reader.hasNext("\\D") && reader.next("\\D").length() == 1) {
-
-				String n = reader.next("\\D");
+			if (reader.hasNext("\\D")) {
 				flg = false;
+				String pattern = "/[aeiou]/i ";
+				String n = reader.next();
+				if(n.matches(pattern)){
+					System.out.println(n+" - Гласная буква");
+				} else {
+					System.out.println(n+" - Согласная буква");
+				}
+				
+				
+				
+				
+				
+				reader.close();
 			} else {
 				System.out
 						.println("Incorrect enter!!! You can not enter number and null!!");
@@ -100,17 +112,23 @@ public class Homework2 {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("__________________________ЗАДАНИЕ 1 (ВАРИАНТ 1)_________________________");
+		System.out
+				.println("__________________________ЗАДАНИЕ 1 (ВАРИАНТ 1)_________________________");
 		task1_1();
-		System.out.println("__________________________ЗАДАНИЕ 1 (ВАРИАНТ 2)__________________________");
+		System.out
+				.println("__________________________ЗАДАНИЕ 1 (ВАРИАНТ 2)__________________________");
 		task1_2();
-		System.out.println("__________________________ЗАДАНИЕ 2_____________________________");
+		System.out
+				.println("__________________________ЗАДАНИЕ 2_____________________________");
 		task2(2014);
-		System.out.println("__________________________ЗАДАНИЕ 3_____________________________");
+		System.out
+				.println("__________________________ЗАДАНИЕ 3_____________________________");
 		task3_1(21);
-		System.out.println("__________________________ЗАДАНИЕ 4_____________________________");
+		System.out
+				.println("__________________________ЗАДАНИЕ 4_____________________________");
 		task4();
-		System.out.println("__________________________ЗАДАНИЕ 5_____________________________");
+		System.out
+				.println("__________________________ЗАДАНИЕ 5_____________________________");
 		task5();
 	}
 
