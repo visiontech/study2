@@ -138,27 +138,32 @@ public class Homework2 {
 	}
 	
 	
-	public static void polindrom(String line){
-		
-		String c[] = line.split("");
+	public static void polindrom(String line) {
+
+		System.out.println(line);
+		char c[] = line.toCharArray();
+
 		Boolean flg = true;
-		
-		for(int i=0; i<c.length/2; i++) 
-		
-			if(c[i].equals(c[c.length-1-i])==false){
-				
+		for (int i = 0; i < c.length / 2; i++)
+
+			if (Character.toUpperCase(c[i]) != Character.toUpperCase(c[c.length
+					- 1 - i])) {
+
 				flg = false;
-				System.out.println(i+"-й и "+(c.length-i) + "-й символы не совпадают!!!\"" + c[i]+"\"<>\""+c[c.length-i]+"\"");	
-				break;				
-			};
-		
+				System.out.println(i + "-й и " + (c.length - i)
+						+ "-й символы не совпадают!!!\"" + c[i] + "\"!=\""
+						+ c[c.length - 1 - i] + "\"");
+				break;
+			}
+		;
+
 		
 		System.out.println(flg);
-		
+
 	}
 
 	public static void main(String[] args) {
-		System.out.println("__________________________ЗАДАНИЕ 1 (ВАРИАНТ 1)_________________________"+"\n");
+		/*System.out.println("__________________________ЗАДАНИЕ 1 (ВАРИАНТ 1)_________________________"+"\n");
 		task1_1();
 		System.out.println("__________________________ЗАДАНИЕ 1 (ВАРИАНТ 2)_________________________"+"\n");
 		task1_2();
@@ -171,7 +176,7 @@ public class Homework2 {
 		System.out.println("__________________________ЗАДАНИЕ 5_____________________________"+"\n");
 		task5();
 		System.out.println("__________________________ЗАДАНИЕ 6_____________________________"+"\n");
-		task6();
-		polindrom("POTOP");
+		task6();*/
+		polindrom("PoTOP");
 	}
 }
