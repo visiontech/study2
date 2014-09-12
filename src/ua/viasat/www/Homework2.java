@@ -136,6 +136,26 @@ public class Homework2 {
 			
 		}
 	}
+	
+	
+	public static void polindrom(String line){
+		
+		String c[] = line.split("");
+		Boolean flg = true;
+		
+		for(int i=0; i<c.length/2; i++) 
+		
+			if(c[i].equals(c[c.length-1-i])==false){
+				
+				flg = false;
+				System.out.println(i+"-й и "+(c.length-i) + "-й символы не совпадают!!!\"" + c[i]+"\"<>\""+c[c.length-i]+"\"");	
+				break;				
+			};
+		
+		
+		System.out.println(flg);
+		
+	}
 
 	public static void main(String[] args) {
 		System.out.println("__________________________ЗАДАНИЕ 1 (ВАРИАНТ 1)_________________________"+"\n");
@@ -152,5 +172,6 @@ public class Homework2 {
 		task5();
 		System.out.println("__________________________ЗАДАНИЕ 6_____________________________"+"\n");
 		task6();
+		polindrom("POTOP");
 	}
 }
