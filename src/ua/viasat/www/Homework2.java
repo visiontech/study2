@@ -9,7 +9,7 @@ public class Homework2 {
 		// вариант1
 		int temp;
 		int a[] = { 9, 5, 7, 6, 0, 3, 1, 2, 4, 8 };
-		System.out.println("INPUT: "+Arrays.toString(a)+"\n");
+		System.out.println("INPUT: " + Arrays.toString(a) + "\n");
 		for (int k = 0; k < a.length - 1; k++) {
 			for (int i = 0; i < a.length - 1 - k; i++) {
 				if (a[i + 1] < a[i]) {
@@ -19,7 +19,7 @@ public class Homework2 {
 				}
 			}
 		}
-		System.out.println("OUTPUT: "+Arrays.toString(a)+"\n");
+		System.out.println("OUTPUT: " + Arrays.toString(a) + "\n");
 	}
 
 	public static void task1_2() { // 1.отсортировать массив метод класса Arrays
@@ -27,7 +27,7 @@ public class Homework2 {
 		int temp;
 		int a[] = { 9, 5, 7, 6, 0, 3, 1, 2, 4, 8 };
 		Arrays.sort(a);
-		System.out.println(Arrays.toString(a)+"\n");
+		System.out.println(Arrays.toString(a) + "\n");
 	}
 
 	public static void task2(int year) {
@@ -35,7 +35,7 @@ public class Homework2 {
 		 * Создать массив из 12 элементов, каждый элемент является колличеством
 		 * дней месяца. Заполнить масив в цикле минимальным количеством строк.
 		 */
-		System.out.println("Year: "+year+"\n");
+		System.out.println("Year: " + year + "\n");
 		int a[] = new int[12];
 		int k = 0;
 		for (int i = 0; i < a.length; i++) {
@@ -44,14 +44,14 @@ public class Homework2 {
 			a[1] = year % 4 == 0 ? 29 : 28;
 		}
 
-		System.out.println(Arrays.toString(a)+"\n");
+		System.out.println(Arrays.toString(a) + "\n");
 	}
 
 	public static void task3_1(int n) {
 		/*
 		 * 3.В цикле вывести 21 число фибоначчи
 		 */
-		System.out.println("Кол-во чисел: "+n+"\n");
+		System.out.println("Кол-во чисел: " + n + "\n");
 		int feb[] = new int[3];
 		feb[0] = 0;
 		feb[1] = 1;
@@ -65,7 +65,7 @@ public class Homework2 {
 		}
 	}
 
-	private static  int[] swapper(int m[], int a, int b) {// ЗАМЕНА ЕЛЕМЕНТОВ
+	private static int[] swapper(int m[], int a, int b) {// ЗАМЕНА ЕЛЕМЕНТОВ
 		int temp;
 		temp = m[a];
 		m[a] = m[b];
@@ -75,38 +75,38 @@ public class Homework2 {
 
 	public static void task4() {
 		// 4. Сделать реверс масива
-		
+
 		int temp;
 		int a[] = { 9, 5, 7, 6, 0, 3, 1, 2, 4, 8, 0 };
-		System.out.println("INPUT: "+Arrays.toString(a)+"\n");
+		System.out.println("INPUT: " + Arrays.toString(a) + "\n");
 		for (int i = 0; i < a.length / 2; i++) {
 			a = swapper(a, i, a.length - 1 - i);
 
 		}
-		System.out.println(Arrays.toString(a)+"\n");
+		System.out.println(Arrays.toString(a) + "\n");
 	}
-	
-	
+
 	public static void task5() {
 		// 5. с клавиатуры вводится число, вывести - четное оно или не четное
 		boolean flg = true;
 		while (flg) {
-			
+
 			System.out.println("Введите число:>");
 			Scanner reader = new Scanner(System.in);
 			if (reader.hasNext("-?\\d*")) {
 				flg = false;
 				int n = reader.nextInt();
-				if(n%2==0){
-					System.out.println(n+" - Четное число");
+				if (n % 2 == 0) {
+					System.out.println(n + " - Четное число");
 				} else {
-					System.out.println(n+" - Нечетное число");
+					System.out.println(n + " - Нечетное число");
 				}
-						
+
 			} else {
-				System.out.println("Некорректный ввод! Переменная должна быть числом!!");
-			} 
-			} 
+				System.out
+						.println("Некорректный ввод! Переменная должна быть числом!!");
+			}
+		}
 	}
 
 	public static void task6() {
@@ -127,17 +127,16 @@ public class Homework2 {
 				} else {
 					System.out.println(n + " - Согласная буква");
 				}
-				
 
 			} else {
-				System.out.println("Некорректный ввод! Переменная должна быть единственной латинской буквой!!");
-				
-			} 
-			
+				System.out
+						.println("Некорректный ввод! Переменная должна быть единственной латинской буквой!!");
+
+			}
+
 		}
 	}
-	
-	
+
 	public static void polindrom(String line) {
 
 		System.out.println(line);
@@ -157,26 +156,39 @@ public class Homework2 {
 			}
 		;
 
-		
 		System.out.println(flg);
 
 	}
 
 	public static void main(String[] args) {
-		/*System.out.println("__________________________ЗАДАНИЕ 1 (ВАРИАНТ 1)_________________________"+"\n");
+		System.out
+				.println("__________________________ЗАДАНИЕ 1 (ВАРИАНТ 1)_________________________"
+						+ "\n");
 		task1_1();
-		System.out.println("__________________________ЗАДАНИЕ 1 (ВАРИАНТ 2)_________________________"+"\n");
+		System.out
+				.println("__________________________ЗАДАНИЕ 1 (ВАРИАНТ 2)_________________________"
+						+ "\n");
 		task1_2();
-		System.out.println("__________________________ЗАДАНИЕ 2_____________________________"+"\n");
+		System.out
+				.println("__________________________ЗАДАНИЕ 2_____________________________"
+						+ "\n");
 		task2(2014);
-		System.out.println("__________________________ЗАДАНИЕ 3_____________________________"+"\n");
+		System.out
+				.println("__________________________ЗАДАНИЕ 3_____________________________"
+						+ "\n");
 		task3_1(21);
-		System.out.println("__________________________ЗАДАНИЕ 4_____________________________"+"\n");
+		System.out
+				.println("__________________________ЗАДАНИЕ 4_____________________________"
+						+ "\n");
 		task4();
-		System.out.println("__________________________ЗАДАНИЕ 5_____________________________"+"\n");
+		System.out
+				.println("__________________________ЗАДАНИЕ 5_____________________________"
+						+ "\n");
 		task5();
-		System.out.println("__________________________ЗАДАНИЕ 6_____________________________"+"\n");
-		task6();*/
+		System.out
+				.println("__________________________ЗАДАНИЕ 6_____________________________"
+						+ "\n");
+		task6();
 		polindrom("PoTOP");
 	}
 }
