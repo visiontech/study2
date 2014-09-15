@@ -81,4 +81,15 @@ public class Player {
 
 		player.close();
 	}
+	
+	public static void playmelody1() {
+
+		Player player = new Player();
+		// player.playSound(0, 500, 80, 69, 78, 81);
+		int n = -5;
+		player.playSound(0, 200, 80, 80, 80, 80);
+		player.playSound(0, 500, 80+n, 80+n, 80+n, 80+n);
+
+		player.close();
+	}
 }

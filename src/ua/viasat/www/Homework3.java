@@ -1,17 +1,10 @@
 package ua.viasat.www;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.Toolkit;
-import java.io.Console;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
-import javax.sound.sampled.AudioFormat;
-import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.SourceDataLine;
 
 public class Homework3 {
 
@@ -30,7 +23,8 @@ public class Homework3 {
 		for (int i = 0; i < line.length; i++) {
 			System.out.print(line[i] + " ");
 
-		} System.out.print("\n═══════════════════");
+		}
+		System.out.print("\n═══════════════════");
 	}
 
 	public static void game() throws UnsupportedEncodingException,
@@ -42,32 +36,36 @@ public class Homework3 {
 		int fk_small = 20;
 		int fk_large = 40;
 		int fk_type = (((int) (Math.random() * 10)) % 4 == 0 ? 2 : 1);
-		
+
 		// System.out.println(fk_type);
-		int id = 0;	
+		int id = 0;
 		String inv = "empty";
 		while (id < line.length - 1) {
-			System.out.print("a <--    H/P: "+hp+" \nd -->"+"    Bag: "+inv+"\n ͠͠ ͠ϟ ͠͠ ͠͠ϟ͠ ͠ ͠͠ ͠  ͠͠ϟ͠ ͠ ͠ ͠ϟ͠ ͠ ");
-			//	System.out.println("\n H/P: " + hp);
-				printArr(line);
+			System.out.print("a <--    H/P: " + hp + " \nd -->" + "    Bag: "
+					+ inv + "\n ͠͠ ͠ϟ ͠͠ ͠͠ϟ͠ ͠ ͠͠ ͠  ͠͠ϟ͠ ͠ ͠ ͠ϟ͠ ͠ ");
+			// System.out.println("\n H/P: " + hp);
+			printArr(line);
 			reader = new Scanner(System.in);
 			String read = reader.nextLine();
 			if (read.matches("[d,D,В,в]") && id < line.length - 1) {
 				if (line[id + 1] != '+') {
+					
 					swapper(line, id, id + 1);
 					id++;
 					Player.tone(500, 50, 0.1);
-					
+
 					printArr(line);
 				} else {
 					swapper(line, id, id + 1);
-					inv=fk_type==1?"small":"large";
+					
+					inv = fk_type == 1 ? "small" : "large";
 					line[id] = '_';
 					id++;
 					Player.tone(500, 50, 0.1);
 					printArr(line);
+					Player.playmelody1();
 				}
-			
+
 			}
 			if (read.matches("[1-2]") && inv != "empty") {
 
@@ -83,7 +81,7 @@ public class Homework3 {
 				}
 				Player.tone(500, 50, 0.1);
 				printArr(line);
-				//System.out.print("\n H/P: " + hp);
+				// System.out.print("\n H/P: " + hp);
 			}
 
 			if (read.matches("[a,A,ф,Ф]") && id > 0) {
@@ -91,17 +89,16 @@ public class Homework3 {
 				id--;
 				Player.tone(500, 50, 0.1);
 				printArr(line);
-			//	System.out.print("\n H/P: " + hp);
+				// System.out.print("\n H/P: " + hp);
 			}
 			System.out.print("\n H/P: " + hp + "    inventory: " + inv
-					+ (inv != "" ? "+" : "")+"\n\n\n");
+					+ (inv != "" ? "+" : "") + "\n\n\n");
 		}
 		if (id == line.length - 1) {
-			System.out.println("\n\n"
-					+ " Game Over!!!");
+			System.out.println("\n\n" + " Game Over!!!");
 			Player.playmelody();
 		}
-		
+
 	}
 
 	public static void main(String[] args) throws LineUnavailableException,
@@ -109,6 +106,6 @@ public class Homework3 {
 		// Player.playmelody();
 		game();
 		System.out.print("\n");
-
+		// Player.playmelody1();
 	}
 }
