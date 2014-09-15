@@ -70,6 +70,8 @@ public class Player {
 			channels[channel].noteOff(note);
 		}
 	}
+	
+	
 
 	public static void playmelody() {
 
