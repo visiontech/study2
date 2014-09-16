@@ -25,30 +25,24 @@ public class Homework3 {
 			System.out.print(line[i] + " ");
 
 		}
-		System.out.print("\n═══════════════════");
+		System.out.print("\n═══════════════════\n\n");
 	}
 
 	public static void game() throws UnsupportedEncodingException,
 			LineUnavailableException, InterruptedException {
-
 		char line[] = { '☺', '_', '_', '_', '_', '_', '_', '_', '_', '_' };
 		line[(int) ((Math.random() + 0.1) * 8)] = '+';
 		int hp = 60;
 		int fk_small = 20;
 		int fk_large = 40;
 		int fk_type = (((int) (Math.random() * 10)) % 4 == 0 ? 2 : 1);
-
-		// System.out.println(fk_type);
 		int id = 0;
 		String inv = "empty";
-		System.out.print("a <--    H/P: " + hp + " \nd -->" + "    Bag: "
-				+ inv + "\n ͠͠ ͠ϟ ͠͠ ͠͠ϟ͠ ͠ ͠͠ ͠  ͠͠ϟ͠ ͠ ͠ ͠ϟ͠ ͠ ");
-
+		
+		System.out.print("\n\n\n\n\n\n\n\n\n\na <--    H/P: " + hp + " \nd -->" + "    Bag: " + inv
+				+ "\n ͠͠ ͠ϟ ͠͠ ͠͠ϟ͠ ͠ ͠͠ ͠  ͠͠ϟ͠ ͠ ͠ ͠ϟ͠ ͠ ");
 		printArr(line);
 		while (id < line.length - 1) {
-
-		
-
 			reader = new Scanner(System.in);
 			String read = reader.nextLine();
 			if (read.matches("[d,D,В,в]") && id < line.length - 1) {
@@ -56,58 +50,58 @@ public class Homework3 {
 
 					swapper(line, id, id + 1);
 					id++;
-					Player.tone(500, 50, 0.1);
-
+					Player.tone(500, 50, 0.8);
 				} else {
 					swapper(line, id, id + 1);
-
 					inv = fk_type == 1 ? "small" : "large";
 					line[id] = '_';
+					System.out.println("Вы подобрали аптечку.");
 					id++;
-					Player.tone(500, 50, 0.1);
-
+					Player.tone(500, 50, 0.8);
 					Player.playmelody1();
 				}
-
 			}
 			if (read.matches("[1-2]") && inv != "empty") {
-
 				switch (inv + read) {
 				case "small1":
 					hp += fk_small;
 					inv = "empty";
+					System.out.println("Использована маленькая аптечка. + 20hp");
 					break;
 				case "large2":
 					hp += fk_large;
 					inv = "empty";
+					System.out.println("Использована большая аптечка. + 40hp");
+					break;
+				case "large1":
+					System.out.println("У вас есть возможность использовать только большую аптечку!!!");
+					break;
+				case "small2":
+					System.out.println("У вас есть возможность использовать только маленькую аптечку!!!");
 					break;
 				}
-				Player.tone(500, 50, 0.1);
-
+				Player.tone(500, 50, 0.8);
+				Thread.sleep(3000);
+				
 			}
 
 			if (read.matches("[a,A,ф,Ф]") && id > 0) {
 				swapper(line, id, id - 1);
 				id--;
-				Player.tone(500, 50, 0.1);
-
+				Player.tone(500, 50, 0.8);
 			}
-			System.out.print("a <--    H/P: " + hp + " \nd -->" + "    Bag: "
+			System.out.print("\n\n\n\n\n\n\n\n\n\na <--    H/P: " + hp + " \nd -->" + "    Bag: "
 					+ inv + "\n ͠͠ ͠ϟ ͠͠ ͠͠ϟ͠ ͠ ͠͠ ͠  ͠͠ϟ͠ ͠ ͠ ͠ϟ͠ ͠ ");
-
 			printArr(line);
-
 		}
 		if (id == line.length - 1) {
 			Thread.sleep(1000);
 			System.out.println("\n\n\n\n\n" + "     Game Over!!!");
 			Player.playmelody();
 		}
-
 	}
 
-	// ////////////////////////////////////////////////////////////////////////////////////////////////Квадратное
-	// уравнение//////////////////////////////////////
+	//Квадратное уравнение
 
 	public static void calc() {
 		double[] k = new double[3];
@@ -123,7 +117,8 @@ public class Homework3 {
 				k[i] = reader.nextDouble();
 				i++;
 			} else {
-				System.out.println("Некорректный ввод! Переменная должна быть числом.");
+				System.out
+						.println("Некорректный ввод! Переменная должна быть числом.");
 			}
 
 		}
@@ -131,16 +126,19 @@ public class Homework3 {
 
 		double D = Math.pow(k[1], 2) - 4 * k[0] * k[2];
 		if (D > 0) {
-			System.out.println("D = " + D+ " > 0;\n Уравнение имеет 2 дейтвительныz корня;");
+			System.out.println("D = " + D
+					+ " > 0;\n Уравнение имеет 2 дейтвительныz корня;");
 			x1 = (-k[1] - Math.pow(D, 0.5)) / 2 * k[0];
 			x2 = (-k[1] + Math.pow(D, 0.5)) / 2 * k[0];
 		}
 		if (D == 0) {
-			System.out.println("D = " + D+ " > 0;\n Уравнение имеет 1 дейтвительныq корень;");
+			System.out.println("D = " + D
+					+ " > 0;\n Уравнение имеет 1 дейтвительныq корень;");
 			x1 = x2 = -k[1] / 2 * k[0];
 		}
 		if (D < 0) {
-			System.out.println("D = " + D+ " < 0;\n Корней на множестве действительных чисел нет;");
+			System.out.println("D = " + D
+					+ " < 0;\n Корней на множестве действительных чисел нет;");
 		}
 
 		System.out.println("Ответ: x1 = " + x1 + "; x2: = " + x2 + ".");
@@ -149,8 +147,8 @@ public class Homework3 {
 
 	public static void main(String[] args) throws LineUnavailableException,
 			IOException, InterruptedException {
-		calc();
+		// calc();
 		game();
-	
+
 	}
 }
