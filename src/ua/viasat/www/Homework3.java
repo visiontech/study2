@@ -29,10 +29,10 @@ public class Homework3 {
 	}
 
 	public static void game() throws UnsupportedEncodingException,
-			LineUnavailableException {
+			LineUnavailableException, InterruptedException {
 
-		char line[] = { '█', '_', '_', '_', '_', '_', '_', '_', '_', '_' };
-		line[(int) ((Math.random() + 0.1) * 9)] = '+';
+		char line[] = { '☺', '_', '_', '_', '_', '_', '_', '_', '_', '_' };
+		line[(int) ((Math.random() + 0.1) * 8)] = '+';
 		int hp = 60;
 		int fk_small = 20;
 		int fk_large = 40;
@@ -41,12 +41,13 @@ public class Homework3 {
 		// System.out.println(fk_type);
 		int id = 0;
 		String inv = "empty";
+		System.out.print("a <--    H/P: " + hp + " \nd -->" + "    Bag: "
+				+ inv + "\n ͠͠ ͠ϟ ͠͠ ͠͠ϟ͠ ͠ ͠͠ ͠  ͠͠ϟ͠ ͠ ͠ ͠ϟ͠ ͠ ");
+
+		printArr(line);
 		while (id < line.length - 1) {
 
-			System.out.print("a <--    H/P: " + hp + " \nd -->" + "    Bag: "
-					+ inv + "\n ͠͠ ͠ϟ ͠͠ ͠͠ϟ͠ ͠ ͠͠ ͠  ͠͠ϟ͠ ͠ ͠ ͠ϟ͠ ͠ ");
-
-			printArr(line);
+		
 
 			reader = new Scanner(System.in);
 			String read = reader.nextLine();
@@ -91,10 +92,15 @@ public class Homework3 {
 				Player.tone(500, 50, 0.1);
 
 			}
+			System.out.print("a <--    H/P: " + hp + " \nd -->" + "    Bag: "
+					+ inv + "\n ͠͠ ͠ϟ ͠͠ ͠͠ϟ͠ ͠ ͠͠ ͠  ͠͠ϟ͠ ͠ ͠ ͠ϟ͠ ͠ ");
+
+			printArr(line);
 
 		}
 		if (id == line.length - 1) {
-			System.out.println("\n\n" + " Game Over!!!");
+			Thread.sleep(1000);
+			System.out.println("\n\n\n\n\n" + "     Game Over!!!");
 			Player.playmelody();
 		}
 
@@ -107,7 +113,7 @@ public class Homework3 {
 		double[] k = new double[3];
 		char k_name[] = { 'a', 'b', 'c' };
 		int i = 0;
-		double x1, x2;
+		double x1 = 0, x2 = 0;
 		System.out
 				.println("Введите коефициенты a,b,c квадратного уравнения  (ax²+bx+c=0):");
 		while (i < k.length) {
@@ -117,35 +123,34 @@ public class Homework3 {
 				k[i] = reader.nextDouble();
 				i++;
 			} else {
-				System.out
-						.println("Некорректный ввод! Переменная должна быть числом.");
+				System.out.println("Некорректный ввод! Переменная должна быть числом.");
 			}
 
 		}
 		System.out.println(Arrays.toString(k));
-		if (Math.pow(k[1], 2) - 4 * k[0] * k[2] >= 0) {
 
-			// приведение квадратного уравнене (делим все коефициенты на
-			// коефициент а)
-			for (int j = 0; j < k.length; j++) {
-				k[j] /= k[0];
-			}
-			System.out.println(Arrays.toString(k));
-			x2 = Math.pow((k[1] - k[2]), 1 / 2);
-			x1 = k[1] - x2;
-			System.out.println("Ответ: x1 = " + x1 + "; x2: = " + x2 + ".");
-
-		} else {
-			System.out
-					.println("Дискриминант <0. Решение в множестве комплексных чисел");
+		double D = Math.pow(k[1], 2) - 4 * k[0] * k[2];
+		if (D > 0) {
+			System.out.println("D = " + D+ " > 0;\n Уравнение имеет 2 дейтвительныz корня;");
+			x1 = (-k[1] - Math.pow(D, 0.5)) / 2 * k[0];
+			x2 = (-k[1] + Math.pow(D, 0.5)) / 2 * k[0];
 		}
+		if (D == 0) {
+			System.out.println("D = " + D+ " > 0;\n Уравнение имеет 1 дейтвительныq корень;");
+			x1 = x2 = -k[1] / 2 * k[0];
+		}
+		if (D < 0) {
+			System.out.println("D = " + D+ " < 0;\n Корней на множестве действительных чисел нет;");
+		}
+
+		System.out.println("Ответ: x1 = " + x1 + "; x2: = " + x2 + ".");
+
 	}
 
 	public static void main(String[] args) throws LineUnavailableException,
-			IOException {
-		// calc();
-		game();
-		// System.out.print("\n");
-		// Player.playmelody1();
+			IOException, InterruptedException {
+		//calc();
+		 game();
+	
 	}
 }
